@@ -10,6 +10,15 @@
 	<h:form>
 		<h:outputLabel for="campoNome" styleClass="label success" value="Nome " />
 		<h:inputText id="campoNome" value="#{pessoaBean.nome}" />
+		<br /> <br />
+		<h:outputLabel for="campoSobrenome" styleClass="label success" value="Sobrenome " />
+		<h:inputText id="campoSobrenome" value="#{pessoaBean.sobrenome}" />
+		<br /> <br />
+		<h:outputText id="nomeCompleto" value="#{pessoaBean.nomeCompleto}" />
+		<br /> <br />
+		
+		<!-- ação "action" exige que o método tenha um retorno que é qual página deve responder -->
+		<h:commandButton value="Mostrar nome completo" action="#{pessoaBean.motrarNomeCompleto}" />
 	</h:form>
 </h:body>
 

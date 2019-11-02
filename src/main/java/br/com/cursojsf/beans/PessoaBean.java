@@ -5,7 +5,15 @@ import javax.faces.bean.ManagedBean;
 @ManagedBean(name = "pessoaBean")
 public class PessoaBean {
 
-	private String nome, sobrenome;
+	private String nome, sobrenome, nomeCompleto;
+	
+	public String motrarNomeCompleto() {
+		
+		nomeCompleto = nome.concat(" ").concat(sobrenome);
+		
+		/* retorno vazio vai para a mesma pagina */
+		return "";
+	}
 
 	public String getNome() {
 		return nome;
@@ -21,6 +29,14 @@ public class PessoaBean {
 
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
+	}
+
+	public String getNomeCompleto() {
+		return nomeCompleto;
+	}
+
+	public void setNomeCompleto(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
 	}
 
 }
