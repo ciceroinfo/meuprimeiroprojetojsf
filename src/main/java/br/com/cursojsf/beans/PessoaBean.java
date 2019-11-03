@@ -3,15 +3,22 @@ package br.com.cursojsf.beans;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @RequestScoped
 @ManagedBean(name = "pessoaBean")
 public class PessoaBean {
+	
+	private static final Logger logger = LoggerFactory.getLogger(PessoaBean.class.getName());
 
 	private String nome, sobrenome, nomeCompleto;
 	
 	public String motrarNomeCompleto() {
 		
 		nomeCompleto = nome.concat(" ").concat(sobrenome);
+		
+		logger.info("Nome Completo ".concat(nomeCompleto));
 		
 		/* retorno vazio vai para a mesma pagina */
 		return "";
