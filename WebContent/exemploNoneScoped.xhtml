@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>@NoneScoped</title>
+	<link rel="StyleSheet" type="text/css" href="css/theme.css" media="screen"></link>
+</h:head>
+
+<h:body>
+	<h1>@NoneScoped</h1>
+	<br />
+	<br />
+	<h:form>
+		<h:outputLabel for="campoNome" styleClass="label success" value="Nome " />
+		<h:inputText id="campoNome" value="#{exemploNoneScoped.nome}" />
+		<br />
+		<br />
+
+		<!-- ação "action" exige que o método tenha um retorno que é qual página deve responder -->
+		<h:commandButton value="Adicionar Nome" action="#{exemploNoneScoped.addNome}" />
+		
+		<br />
+		<br />
+		
+		<h:dataTable value="#{exemploNoneScoped.nomes}" var="nome">
+			<h:column>
+				<h:outputText value="#{nome}" />
+			</h:column>
+			<h:column>
+				<h:outputText value="#{nome}" />
+			</h:column>
+		</h:dataTable>
+		
+	</h:form>
+</h:body>
+
+</html>
