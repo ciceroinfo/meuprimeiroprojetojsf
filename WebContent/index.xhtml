@@ -26,7 +26,7 @@ function alterarValorCampo() {
 		
 		<br />
 		<br />
-		<h:inputText id="nome" />
+		<h:inputText id="nome" onclick="this.value = 'troquei o valor'" onselect="this.value = this.value.toUpperCase();" />
 		<!-- Ações utilizando onclick e eventos de mouse chama o JavaScript -->
 		<h:commandButton value="Chamando JavaStcript" onclick="alterarValorCampo();" />
 	
