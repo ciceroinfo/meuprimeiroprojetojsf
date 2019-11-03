@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Exemplo Bean By Faces Config</title>
+	<link rel="StyleSheet" type="text/css" href="css/theme.css"
+		media="screen"></link>
+</h:head>
+
+<h:body>
+	<h1>@ViewScoped</h1>
+	<h3>ExemploBeanByFacesConfig</h3>
+	<br />
+	<br />
+	<h:form>
+		<h:outputLabel for="campoNome" styleClass="label success"
+			value="Nome " />
+		<h:inputText id="campoNome" value="#{exemploBeanByFacesConfig.nome}" />
+		<br />
+		<br />
+
+		<!-- ação "action" exige que o método tenha um retorno que é qual página deve responder -->
+		<h:commandButton binding="#{exemploBeanByFacesConfig.bindingCommandButton}"
+			value="Adicionar Nome" action="#{exemploBeanByFacesConfig.addNome}" />
+
+		<br />
+		<br />
+
+		<h:dataTable value="#{exemploBeanByFacesConfig.nomes}" var="nome">
+			<h:column>
+				<h:outputText value="#{nome}" />
+			</h:column>
+		</h:dataTable>
+
+	</h:form>
+</h:body>
+
+</html>
