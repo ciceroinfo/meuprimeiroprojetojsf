@@ -6,12 +6,30 @@
 	<link rel="StyleSheet" type="text/css" href="css/theme.css"
 		media="screen"></link>
 </h:head>
+<script type="text/javascript">
 
+function alterarValorCampo() {
+	var campo = document.getElementById('formPessoa:nome');
+	campo.value = 'cliquei no campo';
+}
+
+</script>
 <h:body>
 	<h1>Index.xhtml</h1>
-	<h:form>
+	<h:form id="formPessoa">
 		<!-- Navegação implicita -->
 		<h:commandButton value="Goto primeirapagina" action="primeirapagina" />
+		<br />
+		<br />
+		<!-- Navegação implicita -->
+		<h:commandButton value="Goto primeirapagina via faces-config.xml" action="navegacaoexplicita" />
+		
+		<br />
+		<br />
+		<h:inputText id="nome" />
+		<!-- Ações utilizando onclick e eventos de mouse chama o JavaScript -->
+		<h:commandButton value="Chamando JavaStcript" onclick="alterarValorCampo();" />
+	
 	</h:form>
 </h:body>
 
