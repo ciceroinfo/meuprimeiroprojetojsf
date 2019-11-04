@@ -19,6 +19,21 @@
 		
 		<!-- ação "action" exige que o método tenha um retorno que é qual página deve responder -->
 		<h:commandButton value="Mostrar nome completo" action="#{pessoaBean.motrarNomeCompleto}" />
+		
+		<br /> <br /><br /> <br />
+		
+		<h:outputLabel for="nome" styleClass="label success" value="Nome " />
+		<h:inputText id="nome" value="#{pessoaBean.pessoa.nome}" />
+		<br /> <br />
+		<h:outputLabel for="sobrenome" styleClass="label success" value="Sobrenome " />
+		<h:inputText id="sobrenome" value="#{pessoaBean.pessoa.sobrenome}" />
+		<br /> <br />
+		
+		<!-- ação "action" exige que o método tenha um retorno que é qual página deve responder -->
+		<h:commandButton value="Salvar" action="#{pessoaBean.salvar}" />
+		
+		
+		
 	</h:form>
 </h:body>
 
