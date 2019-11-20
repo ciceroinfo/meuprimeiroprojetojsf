@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Exemplo AJAX</title>
+	<link rel="StyleSheet" type="text/css" href="css/theme.css"
+		media="screen"></link>
+</h:head>
+<h:body>
+	<h1>exemploAjax.xhtml</h1>
+	<h:form id="formPessoa">
+
+		<h:commandButton value="Ajax Button">
+			<f:ajax listener="#{pessoaBean.ajaxMethod}" event="click" render="output" />
+		</h:commandButton>
+		<br />
+		<br />
+		<h:selectOneMenu value="#{pessoaBean.nome}">
+			<f:ajax listener="#{pessoaBean.ajaxMethod}" event="change" render="output" />
+			<f:selectItem itemLabel="Select" />
+			<f:selectItem itemValue="1" itemLabel="Um" />
+   			<f:selectItem itemValue="2" itemLabel="Dois" />
+   			<f:selectItem itemValue="3" itemLabel="Três" />
+		</h:selectOneMenu>
+		<br />
+		<br />
+		<h:outputText id="output" value="#{pessoaBean.nome}" />
+
+	</h:form>
+</h:body>
+
+</html>

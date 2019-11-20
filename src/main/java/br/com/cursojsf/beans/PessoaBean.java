@@ -3,8 +3,8 @@ package br.com.cursojsf.beans;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
-import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +21,9 @@ public class PessoaBean {
 	
 	private Pessoa pessoa;
 	
-	@Inject
+	private static int count;
+	
+	@PersistenceContext(unitName = "meuprimeiroprojetojsf")
 	private EntityManager entityManager;
 	
 	@PostConstruct
@@ -43,6 +45,12 @@ public class PessoaBean {
 		
 		/* retorno vazio vai para a mesma pagina */
 		return "";
+	}
+	
+	public void ajaxMethod() {
+		count++;
+		logger.info(nome + " Médoto AJAX foi chamado [" + count + "]");
+		nome = "nome alterado via ajax [" + count + "]";
 	}
 
 	public String getNome() {
@@ -76,5 +84,5 @@ public class PessoaBean {
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
 	}
-
+	
 }
